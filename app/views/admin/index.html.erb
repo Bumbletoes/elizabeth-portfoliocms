@@ -1,0 +1,11 @@
+<h1>Admin Panel</h1>	
+<div id="galleries">
+	<%= render @galleries %>
+	<div class="gallery" id="newGallery" title="Add New Gallery">
+		<p><%= image_tag "icons/newButton-medium.png" %></p>
+		<%= link_to  new_gallery_path, remote: true do %>
+			<span class="link-spanner"></span>
+		<% end %>
+	</div>
+	
+</div>
