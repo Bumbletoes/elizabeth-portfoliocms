@@ -1,12 +1,31 @@
 <div class="container">
-<div id="galleries">
-	<%= render @galleries %>
-	<div class="gallery" id="newGallery" title="Add New Gallery">
-		<p><%= image_tag "icons/newButton-medium.png" %></p>
-		<%= link_to  new_admin_gallery_path, remote: true do %>
-			<span class="link-spanner"></span>
-		<% end %>
+	<div class="page-header">
+  		<h1>Galleries <small>Editor</small></h1>
+  		<div class="container">
+  			<%= button_to "New Gallery", new_admin_gallery_path, method: "get", remote: true, type: "button", class: "btn btn-primary" %>
+		</div>
+	</div>
+
+	<div id="galleries">
+		<%= render @galleries %>
 	</div>
 </div>
-</div>
 
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
