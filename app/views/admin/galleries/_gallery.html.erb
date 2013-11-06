@@ -5,7 +5,8 @@
 			<h3><%= gallery.name %></h3>
 			<p><%= gallery.description %></p>
 			<p>
-				<%= link_to "Edit", admin_gallery_path(gallery),role: "button",class: "btn btn-primary" %>
+				
+				<%= link_to "Edit", admin_gallery_path(gallery),role: "button",class: "btn btn-primary", data: {toggle: "modal", target: "#editModal"} %>
 				<%= link_to "Delete", admin_gallery_path(gallery), method: :delete,role: "button", data:{confirm: 'Are you sure?'},class: "btn btn-default", remote: true %>
 			</p>
 		</div>
