@@ -1,11 +1,16 @@
-<h1>Admin Panel</h1>	
-<div id="galleries">
-	<%= render @galleries %>
-	<div class="gallery" id="newGallery" title="Add New Gallery">
-		<p><%= image_tag "icons/newButton-medium.png" %></p>
-		<%= link_to  new_gallery_path, remote: true do %>
-			<span class="link-spanner"></span>
-		<% end %>
+<div class="jumbotron">
+	<div class="container">
+		<h1>Hey Elizabeth!</h1>
+		<p>Welcome to the admin console for your site! Here you can edit your galleries and other content. Pretty cool huh?</p>
 	</div>
-	
+</div>
+<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Galleries</h2>
+          <p>Here you can add galleries and edit their descriptions. Anything you add here will automagically show up in your gallery links.</p>
+          <p><%= link_to "Start Editing >>", admin_galleries_path, class: "btn btn-default", role:"button" %></p>
+        </div>
+      </div>
 </div>
