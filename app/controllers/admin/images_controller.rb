@@ -1,7 +1,15 @@
-class ImagesController < ApplicationController
+class Admin::ImagesController < AdminController
+  def index
+   @gallery = Gallery.includes(:images).find(params[:gallery_id])
+   @images = @gallery.images
+   respond_to do |format|
+      format.js    
+    end
+
+  end
+
   def new
     @image = Image.new
-    
   end
   
   def create

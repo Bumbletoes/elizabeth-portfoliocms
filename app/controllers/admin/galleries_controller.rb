@@ -3,7 +3,6 @@ class Admin::GalleriesController < AdminController
     @galleries = Gallery.all
   end
   
-  
   def new
      @gallery = Gallery.new
      @gallery.name = 'New Gallery'
