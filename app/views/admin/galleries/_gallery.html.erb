@@ -1,12 +1,13 @@
 <%= div_for(gallery, title: gallery.description, class: "col-sm-6 col-md-3") do %> 
 	<div class="thumbnail">
-		<img data-src="holder.js/300%x200" alt="...">
+		<%= image_tag "no-image.jpg", alt: "no image", class: "img-polaroid" %>
+		<!-- <img class="img-polaroid" data-src="holder.js/300%x200" alt="..."> -->
 		<div class="caption">
 			<h3><%= gallery.name %></h3>
 			<p><%= gallery.description %></p>
 			<p>
 				
-				<%= link_to "Edit", admin_gallery_path(gallery),role: "button",class: "btn btn-primary", data: {toggle: "modal", target: "#editModal"} %>
+				<%= link_to "Edit", admin_gallery_images_path(gallery),role: "button",class: "btn btn-primary", data: {toggle: "modal", target: "#editModal"}, remote: true %>
 				<%= link_to "Delete", admin_gallery_path(gallery), method: :delete,role: "button", data:{confirm: 'Are you sure?'},class: "btn btn-default", remote: true %>
 			</p>
 		</div>
