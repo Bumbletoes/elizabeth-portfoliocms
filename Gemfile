@@ -50,3 +50,5 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#Paperclip for file uploads
+gem 'paperclip', "~>3.0"

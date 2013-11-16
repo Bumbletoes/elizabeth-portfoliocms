@@ -7,6 +7,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/controllers/admin/galleries_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1077,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -27,21 +35,51 @@
 		"show_minimap": false,
 		"show_open_files": false,
 		"show_tabs": false,
-		"side_bar_visible": false,
+		"side_bar_visible": true,
 		"status_bar_visible": false
 	},
 	"file_history":
 	[
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/controllers/admin/images_controller.rb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/images/_imageUploader.html.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/models/gallery.rb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/images/_modalOverlay.html.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/controllers/admin/galleries_controller.rb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/galleries/_gallery.html.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/images/index.js.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/images/_image.html.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/models/image.rb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/galleries/index.html.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/Gemfile",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/assets/stylesheets/images.css.scss",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/assets/javascripts/images.js",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/index.html.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/db/migrate/20131112041214_add_attachment_photo_to_images.rb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/galleries/_modalOverlay.html.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/galleries/update.js.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/assets/stylesheets/galleries.css.scss",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/galleries/new.js.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/galleries/new.html.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/assets/javascripts/galleries.js.coffee",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/assets/javascripts/application.js",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/assets/stylesheets/application.css",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/views/admin/images/_images.html.erb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/app/assets/javascripts/images.js.coffee",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/db/migrate/20131028030132_create_images.rb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/db/migrate/20131028025808_create_galleries.rb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/db/migrate/20131107053816_remove_gallery_from_images.rb",
+		"/home/levi/Documents/RubyProjects/ElizabethPhotography/db/migrate/20131107053226_add_gallery_to_images_fix.rb"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
 		"height": 0.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -49,6 +87,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"modalRendered",
+			".on",
+			"$('#editModal').modal('hide');",
+			"id",
+			"is",
+			"textbox"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -66,18 +110,47 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/admin/galleries_controller.rb",
+					"settings":
+					{
+						"buffer_size": 1077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								352,
+								344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{
@@ -104,7 +177,7 @@
 	"menu_visible": true,
 	"replace":
 	{
-		"height": 0.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -123,10 +196,10 @@
 		],
 		"width": 0.0
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 357.0,
 	"status_bar_visible": true
 }
