@@ -1,0 +1,14 @@
+<h4><small>Upload an image.</small></h4>
+  
+<%= f.file_field :photo, class: "file-upload" %>
+<div class="upload-controls">
+  <div class="dummyfile">
+    <input id="file-select-button" type="button" class="btn btn-default btn-xs" value="Choose a file" />
+    <input id="file-name" type="text" class="input disabled" name="filename" readonly />
+  </div>
+</div>
+
+
+<div id="upload-progress" class="progress">
+  <div class="bar" style="width: 45%"></div>
+</div>
