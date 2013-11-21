@@ -14,3 +14,52 @@ $('.file-upload').change(function(e){
  });
 
 
+$(function(){
+	$(':file').change(function(){
+		var file = this.files[0];
+		var formData = new FormData($('.edit_gallery')[0]);
+		name = file.name;
+		size = file.size;
+		type = file.type;
+		
+		
+		$.ajax({
+			url:'/admin/galleries/<%= @gallery.id %>/upload', 
+			type: 'POST',
+			xhr: function(){
+				var myXhr = $.ajaxSettings.xhr();
+				if(myXhr.upload){
+					myXhr.upload.addEventListener('progress',progressHandler, false);
+				}
+				return myXhr;
+			},
+			beforeSend: beforeSendHandler,
+			success: completeHandler,
+			error: errorHandler,
+			
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false
+		});
+		
+	});
+	
+	function beforeSendHandler(){
+		$('#upload-progress').show();
+	}
+	
+	function errorHandler(e){
+		console.log(e);
+	}
+	
+	function completeHandler(){
+		$('#upload-progress').hide();
+	}
+	
+	function progressHandler(e){
+		
+	}
+	
+	
+});

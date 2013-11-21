@@ -7,7 +7,10 @@ ElizabethPortfolio::Application.routes.draw do
     resources :galleries do 
       resources :images
     end
+    patch 'galleries/:id/upload' => 'galleries#upload'
   end
+  
+  
   
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

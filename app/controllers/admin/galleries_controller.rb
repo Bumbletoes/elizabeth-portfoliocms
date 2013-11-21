@@ -44,6 +44,21 @@ class Admin::GalleriesController < AdminController
       format.js 
     end  
   end
+  
+  def upload
+    @gallery = Gallery.find(params[:id])
+  
+    @image = Image.new
+    @image.title = params[:filename]
+    @image.gallery = @gallery
+    @image.save 
+    @images = Image.all
+    
+    respond_to do |format|
+      format.js 
+    end
+    
+  end
 
   private
     def gallery_params
@@ -51,7 +66,7 @@ class Admin::GalleriesController < AdminController
     end
 
     def image_params
-      params.require(:image).permit(:title,:description,:date_taken,:photo)
+      params.require(:gallery).require(:images).permit(:photo)
     end 
 
 end
