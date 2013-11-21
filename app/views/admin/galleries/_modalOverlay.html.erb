@@ -8,14 +8,19 @@
 <div class="modal-body">
     <h4>Description</h4>
     <div class="well well-large">
+    	
+    	
       <p id="gallery-description"><%= f.text_area :description, size:"80x8" %></p>
     </div>
     
     <h4>Images</h4>
     <% @images.each do |image| %>
-    <p><%= image.title %></p>
+    	<% if image.title %>
+    	<p><%= image_tag image.photo.url %></p>
+    	<p><%= image.title %></p>
+    	<% end %>
     <% end %> 
-    <%= debug @images %>
+    
     <%= f.fields_for :images do |builder| %>
       <%= render "imageUploader", f: builder %>
     <% end %>

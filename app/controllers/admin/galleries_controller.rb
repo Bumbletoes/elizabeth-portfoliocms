@@ -21,6 +21,7 @@ class Admin::GalleriesController < AdminController
     @gallery = Gallery.includes(:images).find(params[:id])
     @gallery.images.new
     @images = @gallery.images
+      
     respond_to do |format|
       format.js    
     end
@@ -48,11 +49,10 @@ class Admin::GalleriesController < AdminController
   def upload
     @gallery = Gallery.find(params[:id])
   
-    @image = Image.new
+    @image = Image.create(image_params)
     @image.title = params[:filename]
     @image.gallery = @gallery
     @image.save 
-    @images = Image.all
     
     respond_to do |format|
       format.js 
