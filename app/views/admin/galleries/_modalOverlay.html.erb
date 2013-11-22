@@ -14,17 +14,9 @@
     </div>
     
     <h4>Images</h4>
-    <ul class="thumbnails">
-    <% @images.each do |image| %>
-    	<% if image.title %>
-    	<li>
-    	<a href="#" class="thumbnail">
-    	<%= image_tag image.photo.url %>
-    	</a>
-    	</li>
-    	<% end %>
-    <% end %> 
-    </ul>
+    <div id="gallery-images" class="thumbnails">
+    <%= render @images %> 
+    </div>
     
     <%= f.fields_for :images do |builder| %>
       <%= render "imageUploader", f: builder %>

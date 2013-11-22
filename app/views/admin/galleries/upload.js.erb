@@ -1,2 +1,4 @@
-console.log("rawr");
+$('div#gallery-images').append("<%= escape_javascript(render @image) %>");
+$('#<%= dom_id(@image) %>').hide();
+$('#<%= dom_id(@image) %>').fadeIn();
 
