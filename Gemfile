@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 
-gem 'bootstrap-sass', '~> 3.0.1.0.rc'
+gem 'bootstrap-sass', '~> 3.0.2.0'
 
 gem 'font-awesome-sass'
 
