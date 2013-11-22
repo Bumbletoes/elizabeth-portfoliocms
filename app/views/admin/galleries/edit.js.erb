@@ -46,7 +46,8 @@ $(function(){
 	});
 	
 	function beforeSendHandler(){
-		$('#upload-progress').show();
+		$('#upload-progress .bar').css('width',0+'%'); 
+		$('#upload-progress').show(); 
 	}
 	
 	function errorHandler(e){
@@ -58,6 +59,16 @@ $(function(){
 	}
 	
 	function progressHandler(e){
+		console.log(e.loaded);
+		var percentLoaded = (e.totalSize-e.loaded)/100;
+		console.log(percentLoaded);
+		$('#upload-progress').css('width',percentLoaded+'%');
+		console.log($('#upload_progress').css('width'));
+		
+		if(e.lengthComputable){
+			console.log(e.loaded);
+			$('#upload-progress .bar').attr({value:e.loaded,max:e.total});
+		}
 		
 	}
 	

@@ -21,7 +21,7 @@ class Admin::GalleriesController < AdminController
     @gallery = Gallery.includes(:images).find(params[:id])
     @gallery.images.new
     @images = @gallery.images
-      
+       
     respond_to do |format|
       format.js    
     end
