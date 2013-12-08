@@ -1,0 +1,42 @@
+<%= form_for [:admin, @gallery] do |f| %>
+<div class="container">
+<input type="hidden" id="gallery_id" value="<%= @gallery.id %>" />
+<div class="page-header">
+  <h2>
+    <%= f.text_field :name %>
+  </h2> 
+</div>
+
+<div id="edit-gallery-body">
+    <h3>Description</h3>
+    <div class="well well-large">
+      <p id="gallery-description"><%= f.text_area :description, rows: '8' %></p>
+    </div>
+    
+    <h3>Images</h3>
+    <div id="gallery-images" class="thumbnails">
+    <%= render @images %> 
+    </div>
+    
+    <%= f.fields_for :images do |builder| %>
+      <%= render "imageUploader", f: builder %>
+    <% end %>
+    
+</div>
+<div id="edit-gallery-footer">
+  <%= link_to "Cancel", admin_galleries_path, type: 'button', class: 'btn btn-default' %>
+  <%= f.submit 'Save Changes', class: "btn btn-primary" %>
+</div>
+<% end %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+  <div class="modal-content">
+    
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+</div>
+
