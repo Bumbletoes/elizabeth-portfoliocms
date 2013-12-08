@@ -1,7 +1,0 @@
-// kind of a hack to prevent html entities from getting into my
-var description = $('<div/>').html('<%= h(@gallery.description) %>').text(); 
-
-$('#editModal').modal('hide');
-$('#<%= dom_id(@gallery) %> .caption h3').html('<%= @gallery.name %>');
-$('#<%= dom_id(@gallery) %>').attr('title',description);
-$('#<%= dom_id(@gallery) %> .gallery-description').html('<%= @gallery.description %>');

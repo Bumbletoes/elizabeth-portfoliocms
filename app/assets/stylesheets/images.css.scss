@@ -46,7 +46,7 @@
           box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.15);
 }
 
-.modal-body .file-upload {
+#edit-gallery-body .file-upload {
    display: none;
 }
    
@@ -54,3 +54,21 @@
    width: 120px;
    display: inline;
 }
+
+
+#edit-gallery-body{
+  position:relative;
+  padding:20px;
+}
+
+#edit-gallery-footer {
+  margin-top: 15px;
+  padding: 19px 20px 20px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+
+#file-name {
+  width:200px;
+}
+
