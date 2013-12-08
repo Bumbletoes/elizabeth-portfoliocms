@@ -14,8 +14,8 @@
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
-
-
+	width:100%;
+	
 	&:focus {
 		outline-offset: -2px;
 		border-color:rgba(82,168,236,0.8);

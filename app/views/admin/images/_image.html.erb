@@ -1,7 +1,11 @@
 <%= div_for(image) do %>
 	<% if image.title %>
-		<a href="#" class="thumbnail"> <%= image_tag image.photo.url %> </a>
+		<%= link_to href: edit_admin_gallery_image_path(@gallery, image), class: 'thumbnail' do %>
+			<%= image_tag image.photo.url %>
+       		<% end %>
 		<%= link_to 'Delete', admin_gallery_image_path(@gallery, image), confirm: 'Are you sure?', method: :delete, class: 'btn btn-danger', remote: true %>
+	<%= link_to 'Edit', edit_admin_gallery_image_path(@gallery, image), class: 'btn btn-danger' %>
+
 	<% end %>
 <% end %>
 
