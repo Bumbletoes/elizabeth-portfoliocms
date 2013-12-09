@@ -8,7 +8,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'adminNav' %>
+<% if current_user %>
+	<%= render 'adminNav' %>
+<% end %>
 <%= yield %>
 </body>
 </html>
