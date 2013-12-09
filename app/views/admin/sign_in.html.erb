@@ -3,15 +3,15 @@
       <div class="row">
         <div id="login-form">
           <h2>Login</h2>
-          <%= form_for [:admin, @user] do |f| %>
+          <%= form_for @user, as: :user, url: admin_sign_in_path(@user) do |f| %>
             <fieldset>
               <div class="login-input">
                 <%= f.text_field :email, placeholder: 'Email Address' %>
               </div>
               <div class="login-input">
-                <input type="password" placeholder="Password">
+                <%= f.password_field :password, placeholder: 'Password' %>
               </div>
-              <button class="btn primary" type="submit">Sign in</button>
+              <%= f.submit 'Sign in', class: 'btn primary' %>
             </fieldset>
           <% end %>
         </div>
