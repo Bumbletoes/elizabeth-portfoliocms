@@ -7,6 +7,7 @@ ElizabethPortfolio::Application.routes.draw do
     resources :galleries do 
       resources :images
     end
+    resources :users
     patch 'galleries/:id/upload' => 'galleries#upload'
     get 'sign_in' => 'authenticate#sign_in'
   end
