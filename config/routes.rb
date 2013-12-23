@@ -9,8 +9,9 @@ ElizabethPortfolio::Application.routes.draw do
     end
     resources :users
     patch 'galleries/:id/upload' => 'galleries#upload'
-    get 'sign_in' => 'authenticate#sign_in'
-    post "sign_in" => 'authenticate#login'
+    get   'sign_in'              => 'authenticate#sign_in'
+    post  'sign_in'              => 'authenticate#login'
+    get   'sign_out'             => 'authenticate#logout' 
   end
   
   
