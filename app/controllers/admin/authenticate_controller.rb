@@ -8,9 +8,9 @@ class Admin::AuthenticateController < AdminController
   end
 
   def login
-    username_or_email = params[:user][:username]
+    username_or_email = params[:user][:email]
     password = params[:user][:password]
-
+    
     email=username_or_email
     user = User.authenticate_by_email(email, password)
     
@@ -18,8 +18,16 @@ class Admin::AuthenticateController < AdminController
       session[:user_id] = user.id
       redirect_to admin_url
     else
+      @user = User.new
       flash.now[:error] = 'Unknown user. Please check your username and password.'
-      render :action => "admin/sign_in"
+      render :action => "sign_in"
     end
+  end
+  
+  def logout
+    @user = User.new
+    session[:user_id] = nil
+    flash[:notice] = "You have been signed out."
+    render :action => "sign_in"
   end
 end

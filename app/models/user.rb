@@ -2,7 +2,7 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  before_save :encrypt_password, if: :password_changed?
+  before_save :encrypt_password
   
   validates_confirmation_of :password
   validates_presence_of :password, on: :create
@@ -15,9 +15,9 @@ class User < ActiveRecord::Base
     !@new_password.blank?
   end
   
-  def self.authenticate(email, password)
+  def self.authenticate_by_email(email, password)
     if user = find_by_email(email)
-      if BCrypt::Password.new(user.hashed_password).is_password? password 
+      if BCrypt::Password.new(user.password_hash).is_password? password 
         return user
       end
     end

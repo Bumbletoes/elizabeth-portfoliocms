@@ -19,3 +19,21 @@
  	//color:white !important;
  }
 
+#flash_error {
+  border: 1px solid #000000;
+  padding: 4px;
+  margin: 0 auto;
+  background-color: #cc3333;
+  color:white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width:45%;
+}
+
+#flash_notice {
+  border: 1px solid #000066;
+  padding: 4px;
+  margin-bottom: 10px;
+  background-color: #A3B15A;
+}
