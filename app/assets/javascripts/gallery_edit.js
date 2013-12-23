@@ -1,8 +1,6 @@
-$(function() {
-
+$(document).on('page:load', function() {
 	$('#upload-progress').hide();
-
-
+	
 	$('#file-select-button').click(function(e) {
 		$('.file-upload').trigger('click');
 	});
@@ -76,4 +74,4 @@ $(function() {
 
 	}
 
-});
+});	
