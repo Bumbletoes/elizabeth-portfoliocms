@@ -19,7 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
+  adapter: mysql
+  database: elizabeth_portfolio
+  username: 'elizabeth'
+  password: 'XqgNJzbBj2^0to#DBX85'
+  host:     'localhost'
+  socket:   /tmp/mysql.sock
   timeout: 5000
