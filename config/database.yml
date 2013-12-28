@@ -21,8 +21,8 @@ test:
 production:
   adapter: mysql
   database: elizabeth_portfolio
-  username: 'elizabeth'
-  password: 'XqgNJzbBj2^0to#DBX85'
+  username: 'levi'
+  password: 'mMz345qsLv9Y*'
   host:     'localhost'
   socket:   /tmp/mysql.sock
   timeout: 5000
