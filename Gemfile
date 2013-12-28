@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+
+#mysql include
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.1'
@@ -43,6 +46,7 @@ end
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'thin'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -53,7 +57,3 @@ gem 'capistrano'
 
 #Paperclip for file uploads
 gem 'paperclip', "~>3.0"
-
-
-#mysql include
-gem 'mysql2'
