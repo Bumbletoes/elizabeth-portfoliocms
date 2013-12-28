@@ -49,8 +49,7 @@ end
 gem 'thin'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
-gem 'capistrano'
+gem 'capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
