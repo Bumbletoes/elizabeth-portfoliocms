@@ -20,9 +20,9 @@ test:
 
 production:
   adapter: mysql
-  database: elizabeth_portfolio
-  username: 'developer'
-  password: 's33hEL0Fue1CUdrd5NpodOGsIm9xnaUdwfsIthMlNDdvph61Iu1mGSgCPTr1TCX'
+  database: blah
+  username: ''
+  password: ''
   host:     'localhost'
   socket:   /tmp/mysql.sock
   timeout: 5000
