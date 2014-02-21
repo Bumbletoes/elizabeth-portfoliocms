@@ -4,12 +4,12 @@ set :repo_url, 'git@bitbucket.org:lmcphetridge/elizabethportfolio.git'
 server "www.example.com", :app, :web, :db, :primary => true
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, '/var/www/projects'
+set :deploy_to, "/var/www/projects/#{application}"
 set :scm, :git
 set :branch, 'deployment_tests'
-set :user, 'levi'
+set :user, 'developer'
 set :use_sudo, false
-set :rails_env, 'production'
+set :rails_env, :remote_cache
 
 set :deploy_via, :copy
 
