@@ -1,15 +1,15 @@
 set :application, 'elizabeth_portfolio'
 set :repo_url, 'git@bitbucket.org:lmcphetridge/elizabethportfolio.git'
 
-server "www.example.com", :app, :web, :db, :primary => true
+#server "www.elizabethmcphetridge.com", :app, :web, :db, :primary => true
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, "/var/www/projects/#{application}"
+set :deploy_to, "/var/www/projects/"
 set :scm, :git
 set :branch, 'deployment_tests'
 set :user, 'developer'
 set :use_sudo, false
-set :rails_env, :remote_cache
+set :rails_env, "production"
 
 set :deploy_via, :copy
 
@@ -24,9 +24,6 @@ set :ssh_options, { :forward_agent => true }
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
  set :keep_releases, 5
-
-default_run_options[:pty] = true
-
 
 
 namespace :deploy do

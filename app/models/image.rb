@@ -1,7 +1,12 @@
 class Image < ActiveRecord::Base
   belongs_to :gallery
-  has_attached_file :photo, :default_url => "/images/no-image.jpg"
-  
+  has_attached_file :photo, :styles => {:medium => "300x300>", :thumb => "100x100>"}, 
+      :default_url => "./assets/no-image.jpg",
+      :url => "/assets/images/:id/:style/:basename.:extension",
+      :path => ":rails_root/public/assets/images/:id/:style/:basename.:extension"
+
+  validates_attachment_presence :photo
+  validates_attachment_size :photo, :less_than => 5.megabytes
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
   # add this back in to support resizing
-  #:styles => { :medium => "300x300", :thumbnail => "100x100" }, 
 end

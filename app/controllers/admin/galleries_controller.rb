@@ -49,9 +49,9 @@ class Admin::GalleriesController < AdminController
     @image.save 
     
     respond_to do |format|
-      format.js 
+        format.js 
     end
-    
+
   end
 
   private
