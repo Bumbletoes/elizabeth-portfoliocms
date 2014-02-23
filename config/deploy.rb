@@ -46,12 +46,14 @@ namespace :deploy do
   end
 
   task :symlink_shared do 
-      run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-      run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
+      on "developer@www.elizabethmcphetridge.com" do
+          execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+          execute "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
+      end
   end
   
   after :finishing, 'deploy:cleanup'
 
 end
 
-after 'deploy:update_code', 'deploy:symlink_shared'
+before 'deploy:restart', 'deploy:symlink_shared'
