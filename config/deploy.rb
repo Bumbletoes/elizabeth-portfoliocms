@@ -46,7 +46,7 @@ namespace :deploy do
   task :symlink_shared do 
       on "developer@www.elizabethmcphetridge.com" do
           execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-          execute "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
+          execute "ln -nfs #{shared_path}/assets/images/ #{release_path}/public/assets/uploaded_images"
       end
   end
   
