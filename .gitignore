@@ -16,3 +16,4 @@
 /tmp
 config/database.yml
 db/seeds.rb
+public/assets/images/[^.]*
