@@ -1,7 +1,10 @@
 class Image < ActiveRecord::Base
   belongs_to :gallery
   has_attached_file :photo, :styles => {:medium => "300x300>", :thumb => "100x100>"}, 
-      :default_url => "./assets/no-image.jpg"
+      :default_url => "./assets/no-image.jpg",
+      :path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
+      :url => "/system/:attachment/:id/:basename_:style.:extension",
+
 
 
   validates_attachment_presence :photo
