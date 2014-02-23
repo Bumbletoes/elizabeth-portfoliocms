@@ -3,7 +3,7 @@ class Image < ActiveRecord::Base
   has_attached_file :photo, :styles => {:medium => "300x300>", :thumb => "100x100>"}, 
       :default_url => "/assets/no-image.jpg",
       :path => "/var/www/projects/shared/assets/images/:id/:style/:basename.:extension",
-      :url => ":rails_root/assets/uploaded_images/:id/:style/:basename.:extension"
+      :url => "/assets/uploaded_images/:id/:style/:basename.:extension"
 
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 5.megabytes
