@@ -29,9 +29,10 @@ set :ssh_options, { :forward_agent => true }
 namespace :deploy do
 
   desc 'Restart application'
-  task :restart do
-      on roles(:app), in: :sequence, wait: 5 do
-      end
+  task :restart :roles => :app, :except => { :no_release => true } do
+      # Hack to have capistrano enter the sudo password (for rvmsudo later)
+      sudo "whoami"
+      execute "rvmsudo /etc/init.d/thin restart"
   end
 
   after :restart, :clear_cache do
