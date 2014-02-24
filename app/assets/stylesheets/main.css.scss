@@ -1,0 +1,218 @@
+@font-face {
+    font-family: 'ThinLinesandCurvesRegular';
+    src: font-url('/assets/thin_lines_and_curves-webfont.eot');
+    src: font-url('/assets/thin_lines_and_curves-webfont.eot?#iefix') format('embedded-opentype'), 
+         font-url('/assets/thin_lines_and_curves-webfont.woff') format('woff'), 
+         font-url('/assets/thin_lines_and_curves-webfont.ttf') format('truetype'), 
+         font-url('/assets/thin_lines_and_curves-webfont.svg#ThinLinesandCurvesRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'ThinLinesandCurvesRegular';
+    font-weight: normal;
+}
+
+body {
+    margin: 0 auto;
+    background-color:black;
+}
+
+ul {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+p {
+    color:white;
+}
+
+
+
+#wrapper {
+    width: 960px;
+}
+
+/*
+ * Header elements
+ */
+    #header {
+        width:325px;
+        height:85px;
+        position:absolute;
+        top:5px;
+        background-color:rgba(255,255,255,0.8);
+
+        h1 {
+            font-family: 'ThinLinesandCurvesRegular';
+            font-weight: normal;
+            margin: 15px 0px 0px 10px;
+            font-size: 30px;
+            display: inline-block;
+        }
+
+        h2 {
+            display: inline;
+        }
+
+        h1 a, h2 a {
+            text-decoration: none;
+            color:black;
+        }
+
+        h2 {
+            font-family: 'ThinLinesandCurvesRegular';
+            font-weight: normal;
+            margin: 30px 0px 0px 10px;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+
+    }
+
+    #navContentWrapper {
+        width: 960px;
+    }
+
+    /*
+     * Nav elements
+     */
+    nav {
+        display: inline-block;
+        vertical-align: top;
+
+        ul {
+            white-space: nowrap;
+            width: auto;
+
+            li {
+                margin: 7px;
+                font-size: 12px;
+                color: black;
+                padding:10px;
+                display:inline;
+                a:visited {
+                    color: black;
+                    text-decoration: none;
+                }
+
+                a {
+                    padding: 2px;
+                }
+                a:link {
+                    color: black;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    color: gray;
+                    text-decoration: none;
+                }
+
+                p:visited {
+                    color: black;
+                    text-decoration: none;
+                }
+                p {
+                    padding: 2px;
+                }
+                p:link {
+                    color: black;
+                    text-decoration: none;
+                }
+                p:hover {
+                    color: gray;
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+        p {
+            cursor: hand; 
+            cursor: pointer;
+        }
+
+    }
+    /*
+     * Content elements
+     */
+    #content {
+        margin: 0 auto;
+        display: inline-block;
+        width:800px;
+
+        p {
+            font-family: Garamond, serif;
+            font-size: 0.9em;
+        }
+
+        #homepageimage {
+            display: block;
+            margin: 25px auto 0px auto;
+        }
+
+        ul {
+            margin: 30px auto 30px auto;
+        }
+    }
+
+
+
+    /* Adding this in here for now, I really need to seperate out my css files */
+
+
+    #thumbNails ul li {
+        display: inline-block;
+        margin:15px;
+
+        a {
+            margin: 10px;
+        }
+
+
+        a img:hover {
+            -webkit-box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 1);
+            box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 1);
+            -moz-transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+            -o-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+        img {
+            -webkit-transition: all 300ms ease-in-out;
+            -moz-transition: all 300ms ease-in-out;
+            -o-transition: all 300ms ease-in-out;
+            -ms-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+        }
+
+    }
+
+
+    /*
+     * Footer elements
+     */
+    #footer {
+        margin: 10px auto 0px auto;
+        padding-top:100px;
+        width:960px;
+
+        p {
+            font-family: Verdana;
+            text-align: center;
+            color: white;
+            font-size: 8px;
+        }
+
+    }
+
+    .active {
+        border-bottom: 1px solid;
+    }
