@@ -11,14 +11,9 @@
  *= require_self
  *= require bootstrap
  *= require font-awesome
- *= require_tree .
+
  */
  
- body {
- 	//background-color:black !important;
- 	//color:white !important;
- }
-
 #flash_error {
   border: 1px solid #000000;
   padding: 4px;

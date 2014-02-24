@@ -1,0 +1,39 @@
+// Place all the styles related to the Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+*= require_self
+*= require bootstrap
+*= require font-awesome
+*= require_tree .
+*/
+body {
+  padding-top:50px;
+}
+
+
+.thumbnails {
+  div {
+    display:inline-block;
+  }  
+}
+
+#flash_error {
+  border: 1px solid #000000;
+  padding: 4px;
+  margin: 0 auto;
+  background-color: #cc3333;
+  color:white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width:45%;
+}
+
+#flash_notice {
+  border: 1px solid #000066;
+  padding: 4px;
+  margin-bottom: 10px;
+  background-color: #A3B15A;
+}

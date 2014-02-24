@@ -1,4 +1,13 @@
-<div>
-    <h2>Welcome!</h2>
-    <p>This site is currently under construction check back later!</p>
+<!-- Add your site or application content here -->
+<div id="header">
+    <h1><%= link_to "Elizabeth McPhetridge", root_path %></h1>
+    <nav>
+        <ul>
+            <% @navItems.each do |navItem| %>
+                <li><%= navItem.name %></li>
+        <% end %>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
 </div>
