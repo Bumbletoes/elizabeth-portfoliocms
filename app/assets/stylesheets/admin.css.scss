@@ -6,7 +6,9 @@
 *= require_self
 *= require bootstrap
 *= require font-awesome
-*= require_tree .
+*= require galleries
+*= require images
+*= require authenticate
 */
 body {
   padding-top:50px;
