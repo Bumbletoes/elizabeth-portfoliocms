@@ -61,6 +61,7 @@ ElizabethPortfolio::Application.configure do
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
   config.assets.precompile += %w( .svg, .eot, .woff, .tff)
+  config.assets.precompile += ["admin.css"]
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
