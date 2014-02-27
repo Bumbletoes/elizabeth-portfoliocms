@@ -8,7 +8,7 @@ $(function(){
     });
 
     $.supersized({
-        slides  :   [ {image : 'images/portfolio1/LeviChimneyMan.jpg', title : 'New York'} ]
+        slides  :   [ {image : 'http://www.elizabethmcphetridge.com/assets/uploaded_images/33/original/Jerome.jpg?1393346584', title : 'Jerome'} ]
     });
 
 
