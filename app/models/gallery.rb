@@ -7,7 +7,7 @@ class Gallery < ActiveRecord::Base
       response = Array.new
       
       gallery_images.each do |image|
-         temp = {title: image[:title], image: 'assets/' + image[:photo_file_name]}
+         temp = {title: image[:title], image: 'assets/' + image.photo.url}
          response << temp
       end
 
