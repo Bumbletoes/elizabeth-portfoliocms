@@ -7,11 +7,13 @@ $(function(){
         e.stopPropagation();
     });
 
-    $.supersized({
- //       slides  :   [ {image : 'http://www.elizabethmcphetridge.com/assets/uploaded_images/33/original/Jerome.jpg?1393346584', title : 'Jerome'} ]
-      slides  :   [ {image : 'assets/LeviChimneyMan.jpg', title : 'Jerome'} ]
-
+    $.ajax({
+        url: 'load_gallery/2',
+        type: 'GET',
+        dataType: 'script'
     });
+
+
 
 
 });

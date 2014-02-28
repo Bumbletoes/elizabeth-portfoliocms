@@ -19,7 +19,7 @@ ElizabethPortfolio::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get 'gallery/:id' => 'galleries#getImages'
+  get 'load_gallery/:id' => 'welcome#load_gallery'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
