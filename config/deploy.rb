@@ -23,33 +23,52 @@ set :ssh_options, { :forward_agent => true }
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
- set :keep_releases, 5
+set :keep_releases, 5
+
+
+
+
 
 
 namespace :deploy do
-
-  desc 'Restart application'
-  task :restart  do
-  end
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+    namespace :assets do
+        desc 'Run the precompile task locally before deploying'
+        task :precompile  do
+            execute "rake assets:precompile RAILS_ENV=production"
+            execute "rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{host}:#{shared_path}"
+            execute "rake assets:clean RAILS_ENV=production"
+        end
     end
-  end
 
-  task :symlink_shared do 
-      on "developer@www.elizabethmcphetridge.com" do
-          execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-          execute "ln -nfs #{shared_path}/assets/images/ #{release_path}/public/assets/uploaded_images"
-      end
-  end
-  
-  after :finishing, 'deploy:cleanup'
+    desc 'Restart application'
+    task :restart  do
+        on "developer@www.elizabethmcphetridge.com" do
+            execute "sudo /etc/init.d/thin restart"
+        end
+    end
+
+    after :restart, :clear_cache do
+        on roles(:web), in: :groups, limit: 3, wait: 10 do
+            # Here we can do anything such as:
+            # within release_path do
+            #   execute :rake, 'cache:clear'
+            # end
+        end
+    end
+
+    task :symlink_shared do 
+        on "#{user}@#{host}" do
+            execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+            execute "ln -nfs #{shared_path}/assets/images/ #{release_path}/public/assets/uploaded_images"
+        end
+    end
+
+    after :finishing, 'deploy:cleanup'
 
 end
 
 before 'deploy:restart', 'deploy:symlink_shared'
+
+
+
+
