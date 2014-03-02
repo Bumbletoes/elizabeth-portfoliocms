@@ -6,7 +6,7 @@ set :repo_url, 'git@bitbucket.org:lmcphetridge/elizabethportfolio.git'
 
 set :deploy_to, "/var/www/projects/"
 set :scm, :git
-set :branch, 'deployment_tests'
+set :branch, 'master'
 set :user, 'developer'
 set :use_sudo, false
 set :rails_env, "production"
