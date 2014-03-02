@@ -17,4 +17,4 @@
 config/database.yml
 db/seeds.rb
 public/assets/images/[^.]*
-public/assets/uploaded_images
+public/assets/uploaded_images/[^.]*

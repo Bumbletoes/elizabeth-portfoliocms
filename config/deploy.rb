@@ -25,18 +25,13 @@ set :ssh_options, { :forward_agent => true }
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
 
-
-
-
-
-
 namespace :deploy do
     namespace :assets do
         desc 'Run the precompile task locally before deploying'
-        task :precompile  do
-            execute "rake assets:precompile RAILS_ENV=production"
-            execute "rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets #{user}@#{host}:#{shared_path}"
-            execute "rake assets:clean RAILS_ENV=production"
+        task :precompile do
+            %x{rake assets:precompile RAILS_ENV=production}
+            %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets developer@www.elizabethmcphetridge.com:#{release_path}}
+            %x{rake assets:clean RAILS_ENV=production}
         end
     end
 
@@ -57,7 +52,7 @@ namespace :deploy do
     end
 
     task :symlink_shared do 
-        on "#{user}@#{host}" do
+        on "developer@www.elizabethmcphetridge.com" do
             execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
             execute "ln -nfs #{shared_path}/assets/images/ #{release_path}/public/assets/uploaded_images"
         end
@@ -67,7 +62,8 @@ namespace :deploy do
 
 end
 
-before 'deploy:restart', 'deploy:symlink_shared'
+before 'deploy:symlink_shared', 'deploy:assets:precompile'
+after 'deploy:symlink_shared', 'deploy:restart'
 
 
 
