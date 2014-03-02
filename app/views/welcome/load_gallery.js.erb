@@ -1,3 +1,9 @@
 $.supersized({
+   slideshow      : 1,
+   autoplay       : 1,
+   slide_interval : 3000,
+   performance    : 2,
+   image_protect  : 1,
+   progress_bar   : 1,
    slides : <%= @gallery_images.to_json.html_safe %> 
 });
