@@ -15,12 +15,9 @@ set :deploy_via, :copy
 
 set :ssh_options, { :forward_agent => true }
 
-# set :format, :pretty
-# set :log_level, :debug
-# set :pty, true
+set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{public/assets/uploaded_images}
 
-# set :linked_files, %w{config/database.yml}
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
@@ -51,20 +48,5 @@ namespace :deploy do
         end
     end
 
-    task :symlink_shared do 
-        on "developer@www.elizabethmcphetridge.com" do
-            execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-            execute "ln -nfs #{shared_path}/assets/images/ #{release_path}/public/assets/uploaded_images"
-        end
-    end
-
     after :finishing, 'deploy:cleanup'
-
 end
-
-before 'deploy:symlink_shared', 'deploy:assets:precompile'
-after 'deploy:symlink_shared', 'deploy:restart'
-
-
-
-
