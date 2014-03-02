@@ -28,7 +28,7 @@ namespace :deploy do
         task :precompile do
             %x{rake assets:precompile RAILS_ENV=production}
             %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets developer@www.elizabethmcphetridge.com:#{release_path}}
-            %x{rake assets:clean RAILS_ENV=production}
+            %x{rake assets:clobber}
         end
     end
 
