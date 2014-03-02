@@ -16,7 +16,7 @@ set :deploy_via, :copy
 set :ssh_options, { :forward_agent => true }
 
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{public/assets/uploaded_images}
+#set :linked_dirs, %w{assets/uploaded_images}
 
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -27,7 +27,7 @@ namespace :deploy do
         desc 'Run the precompile task locally before deploying'
         task :precompile do
             %x{rake assets:precompile RAILS_ENV=production}
-            %x{rsync --recursive --times --rsh=ssh --compress --human-readable --progress public/assets developer@www.elizabethmcphetridge.com:#{release_path}}
+            %x{rsync -vr --exclude='.DS_Store' public/assets developer@www.elizabethmcphetridge.com:#{release_path}/public/}
             %x{rake assets:clobber}
         end
     end
@@ -48,5 +48,15 @@ namespace :deploy do
         end
     end
 
+    task :symlink_shared do 
+        on "developer@www.elizabethmcphetridge.com" do
+            execute "ln -nfs #{shared_path}/assets/images/ #{release_path}/public/assets/uploaded_images"
+        end
+    end
+
     after :finishing, 'deploy:cleanup'
 end
+
+
+before 'deploy:symlink_shared', 'deploy:assets:precompile'
+before 'deploy:restart', 'deploy:symlink_shared'
