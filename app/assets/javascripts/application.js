@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require supersized.min.js
+//= require supersized.js
 //= require supersized.shutter.min.js
 //= require_tree .
