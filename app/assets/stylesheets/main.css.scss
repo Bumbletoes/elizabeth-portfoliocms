@@ -32,10 +32,14 @@ body {
  */
 #header {
     width:100%;
-    height:65px;
+    height:58px;
     position:absolute;
     border-radius:0px;
-    background-color:rgba(255,255,255,0.9);
+    background-color:#e7e7e7;
+
+    .navbar-collapse{
+        border-color:#e7e7e7;
+    }
 
     h1 {
         font-family: 'i_shot_the_serifregular';
@@ -53,53 +57,62 @@ body {
         }
 
     }
-}
 
-/*
- * Nav elements
- */
-nav {
-    display: inline-block;
-    vertical-align: top;
+    .navbar-toggle {
+        border:1px solid #999;
 
-    ul {
-        white-space: nowrap;
-        width: auto;
-        margin-top:12px;
-        display:inline-block;
-        text-decoration: none;
-        list-style-type: none;
 
-        li {
-            font-size: 12px;
-            color: black;
-            padding:13px;
-            margin-left:2px;
-            display:inline;
-
-            a{
-                padding: 2px;
-
-                &:visited {
-                    color: black;
-                    text-decoration: none;
-                }
-                &:link {
-                    color: black;
-                    text-decoration: none;
-                }
-                &:hover {
-                    color: gray;
-                    text-decoration: none;
-                }
-
-            }
+        &:hover {
+            background-color:#ddd;
         }
 
+        &:focus{
+            background-color:#ccc;
+        }
+
+        .icon-bar {
+            background-color:#aaa;
+        }
     }
 
 }
 
+/*
+ * Nav elements
+ */   
+#navbar-links {
+    vertical-align: top;
+    background-color:#e7e7e7;
+
+
+    ul {
+        border-top:3px solid #ddd;   
+        li{
+            border-bottom:3px solid #ddd;
+        }
+    }
+
+
+    ul{
+        li a {
+            color:#333333;
+            padding-left:25px;
+            &:hover {
+                background-color:#eee;
+                text-decoration:none;
+                background-image: image-url('camera.png');
+                background-repeat:no-repeat;
+                background-size:20px;
+                background-position:left center;
+            }
+        }
+    }
+}
+
 .active {
-    border-bottom: 1px solid;
+    text-decoration:none;
+    background-image: image-url('camera.png');
+    background-repeat:no-repeat;
+    background-size:20px;
+    background-position:left center;
 }
