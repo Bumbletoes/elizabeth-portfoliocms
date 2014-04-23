@@ -1,8 +1,8 @@
 $(document).on('ready page:load',function(){
     $('#clickArea').click(function(e){
- //       $('#header').animate({height: 'toggle'});
-        $('#header').fadeToggle();
-      });
+        console.log(e);
+        $('#header').animate({width: 'toggle'});
+    });
 
     $.ajax({
         url: 'load_gallery/2',

@@ -1,23 +1,13 @@
-<div class="navbar navbar-inverse navbar-fixed-top" id="header">
-    <nav class="container" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <% @navItems.each do |navItem| %>
-                    <span class="icon-bar"></span>
-                <% end %>
-            </button>
-            <h1 class="navbar-brand"><%= link_to "ELIZABETH MCPHETRIDGE", root_path %></h1>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <% @navItems.each do |navItem| %>
-                    <li><%= link_to navItem.name, get_gallery_path(navItem), remote: true %></li>
+<div id="header">
+    <h1><%= link_to "ELIZABETH MCPHETRIDGE", root_path %></h1>
+    <nav>
+        <ul>
+            <% @navItems.each do |navItem| %>
+                <li><%= link_to navItem.name, get_gallery_path(navItem), remote: true %></li>
             <% end %>
-            </ul>
-        </div>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
     </nav>
 </div>
 <div id="clickArea"></div>
