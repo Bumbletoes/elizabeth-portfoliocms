@@ -4,6 +4,7 @@ ElizabethPortfolio::Application.routes.draw do
   get 'admin' => 'admin#index'
   
   namespace :admin do
+    resources :users
     resources :galleries do 
       resources :images
     end

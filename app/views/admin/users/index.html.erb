@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="page-header">
+        <h1>About <small>Edit</small></h1>
+        <div class="container">
+        </div>
+    </div>
+
+    <div id="users">
+        <h2><%=@user.username.capitalize%></h2>
+        <%= text_area(:user, :about_me, size: "120x20") %>
+
+    </div>
+</div>
