@@ -1,13 +1,19 @@
+<%= form_for [:admin, @user] do |f| %>
 <div class="container">
-    <div class="page-header">
-        <h1>About <small>Edit</small></h1>
-        <div class="container">
-        </div>
+   <div class="page-header">
+        <h2>About Me</h2> 
     </div>
 
-    <div id="users">
-        <h2><%=@user.username.capitalize%></h2>
-        <%= text_area(:user, :about_me, size: "120x20") %>
+    <div id="edit-gallery-body">
+        <h3><%=@user.username.capitalize%></h3>
+        <div class="well well-large">
+            <p id="about-me"><%= f.text_area(:about_me, size: "120x20") %></p>
+        </div>   
+    </div>
 
+    <div id="edit-gallery-footer">
+        <%= link_to "Cancel", admin_galleries_path, type: 'button', class: 'btn btn-default' %>
+        <%= f.submit 'Save Changes', class: "btn btn-primary" %>
     </div>
 </div>
+<% end %>

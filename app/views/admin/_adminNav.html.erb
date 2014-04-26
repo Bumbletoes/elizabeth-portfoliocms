@@ -14,7 +14,7 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
         <li class="<%= "active" if params[:controller] == "admin/galleries" %>"><%= link_to "Galleries", admin_galleries_path %></li>
-        <li class="<%= "active" if params[:controller] == "admin/about" %>"><%= link_to "About", admin_users_path %></li>
+        <li class="<%= "active" if params[:controller] == "admin/users" %>"><%= link_to "About", admin_users_path %></li>
         <li><%= link_to "Sign Out", admin_sign_out_path %></li>
       <!-- <li><a href="#">Images</a></li> -->
     </ul>
