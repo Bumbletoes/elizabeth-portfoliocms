@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     end
 
     def load_about
-        @about = User.find_by(:username, 'levi');
+        @about = User.find_by(:username => 'levi').about_me;
         respond_to do |format|
             format.js
         end
