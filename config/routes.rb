@@ -21,6 +21,7 @@ ElizabethPortfolio::Application.routes.draw do
   root 'welcome#index'
 
   get 'load_gallery/:id' => 'welcome#load_gallery', as: :get_gallery
+  get 'load_about' => 'welcome#load_about', as: :get_about
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

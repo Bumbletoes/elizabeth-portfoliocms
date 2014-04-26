@@ -5,8 +5,7 @@
             <% @navItems.each do |navItem| %>
                 <li><%= link_to navItem.name, get_gallery_path(navItem), remote: true %></li>
             <% end %>
-            <li>About</li>
-            <li>Contact</li>
+                <li><%= link_to 'About', get_about_path, remote: true %></li>
         </ul>
     </nav>
 </div>
