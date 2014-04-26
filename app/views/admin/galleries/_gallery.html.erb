@@ -7,8 +7,8 @@
 			<p class="gallery-description"><%= gallery.description %></p>
 			<p>
 				
-				<%= link_to "Edit", edit_admin_gallery_path(gallery), role: "button",class: "btn btn-primary" %>
-				<%= link_to "Delete", admin_gallery_path(gallery), method: :delete,role: "button", data:{confirm: 'Are you sure?'},class: "btn btn-default", remote: true %>
+				<%= link_to "Edit", edit_admin_gallery_path(gallery), role: "button",class: "btn btn-default" %>
+				<%= link_to "Delete", admin_gallery_path(gallery), method: :delete,role: "button", data:{confirm: 'Are you sure?'},class: "btn btn-danger", remote: true %>
 			</p>
 		</div>
 	</div>
