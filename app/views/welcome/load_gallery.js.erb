@@ -6,20 +6,22 @@
 
     $.supersized({
         // Functionality
-        slideshow         :1,			// Slideshow on/off
-        autoplay	  :1,			// Slideshow starts playing automatically
-        start_slide       :1,			// Start slide (0 is random)
-        stop_loop	  :0,			// Pauses slideshow on last slide
-        random	          :0,			// Randomize slide order (Ignores start slide)
-        slide_interval    :5000,	        // Length between transitions
-        transition        :1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-        transition_speed  :1000,		// Speed of transition
-        new_window	  :1,			// Image links open in new window/tab
-        pause_hover       :0,			// Pause slideshow on hover
-        keyboard_nav      :1,			// Keyboard navigation on/off
-        performance	  :1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
-        image_protect     :1,			// Disables image dragging and right click with Javascript
-
+        slideshow            :1,			// Slideshow on/off
+        autoplay	     :1,			// Slideshow starts playing automatically
+        start_slide          :1,			// Start slide (0 is random)
+        stop_loop	     :0,			// Pauses slideshow on last slide
+        random	             :0,			// Randomize slide order (Ignores start slide)
+        slide_interval       :5000,	                // Length between transitions
+        transition           :1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+        transition_speed     :1000,		        // Speed of transition
+        new_window	     :1,			// Image links open in new window/tab
+        pause_hover          :0,			// Pause slideshow on hover
+        keyboard_nav         :1,			// Keyboard navigation on/off
+        performance	     :1,			// 0-Normal, 1-Hybrid speed/quality, 2-Optimizes image quality, 3-Optimizes transition speed // (Only works for Firefox/IE, not Webkit)
+        image_protect        :1,			// Disables image dragging and right click with Javascript
+        thumb_links          :1,
+        thumbnail_navigation :0,
+        fit_always           :1,
 
         slides : <%= @gallery_images.to_json.html_safe %> 
     });
@@ -31,11 +33,11 @@
             imagePreviewHTML +=   '<img data-index="<%= index %>" src="<%= gallery_image[:image]  %>" title="<%= gallery_image[:title] %>" />';
             imagePreviewHTML += '</li>';
     <% end %>
-
-        $('#thumb-list').html(imagePreviewHTML);
+        
+    $('#thumb-list').html(imagePreviewHTML);
 
     $('.preview-image-container img').click(function(){
-    //        api.goTo(1);
+        api.goTo($(this).attr('data-index'));
     });
 
 })();
