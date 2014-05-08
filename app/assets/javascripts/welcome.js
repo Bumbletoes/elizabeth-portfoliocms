@@ -13,9 +13,5 @@ $(document).on('ready page:load',function(){
         url: 'load_gallery/2',
         type: 'GET',
         dataType: 'script'
-    }).done(function(){
-        $('.preview-image-container img').click(function(){
-            $.supersized.goTo($(this).attr('data-index'));
-        });
     });
 });
