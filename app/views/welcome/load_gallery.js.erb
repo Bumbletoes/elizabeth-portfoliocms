@@ -1,5 +1,6 @@
 (function(){
     $('#supersized-loader').empty().remove();
+    $('#thumb-list').html('').empty().remove();
     $('#supersized').empty().remove();
     $('#hzDownscaled').empty().remove();
     $('body').append('<div id="supersized-loader"></div><ul id="supersized"></ul>');
@@ -35,8 +36,7 @@
             imagePreviewHTML +=   '<img data-index="<%= index %>" src="<%= gallery_image[:image]  %>" title="<%= gallery_image[:title] %>" />';
             imagePreviewHTML += '</li>';
     <% end %>
-    $('#thumb-list').html('');
-    $('#thumb-list').html(imagePreviewHTML);
+     $('#thumb-list').html(imagePreviewHTML);
 
 
     $('.preview-image-container img').click(function(){
