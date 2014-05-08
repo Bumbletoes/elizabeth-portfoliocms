@@ -40,7 +40,7 @@
 
 
     $('.preview-image-container img').click(function(){
-        api.goTo($(this).attr('data-index'));
+        api.goTo($(this).attr('data-index') - 1);
     });
 
 })();

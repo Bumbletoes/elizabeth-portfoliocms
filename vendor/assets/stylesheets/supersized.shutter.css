@@ -56,7 +56,10 @@ ul#slide-list li a:hover{ background-position:0 -12px; cursor:pointer; }
 
 /* Thumbnail Tray
 ----------------------------*/			
-#thumb-tray{ display:inline-block !important; }
+#thumb-tray{ 
+    display:inline-block !important; 
+    width:100% !important;
+}
 
 #thumb-back, #thumb-forward{ position:absolute; z-index:5; bottom:42px; height:108px; width:40px; }
 #thumb-back{ left:0; background: url('../img/thumb-back.png') no-repeat center center;}
