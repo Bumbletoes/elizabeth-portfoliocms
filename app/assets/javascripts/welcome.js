@@ -1,14 +1,12 @@
 $(document).on('ready page:load',function(){
-    $('#hit-area').hover(function(e){
-        var position = -60;
-        var hitAreaPosition = -110;
-        if($('#header').css('bottom') == '-60px'){
-            position = 50;
-            hitAreaPosition = 0;
+    $('#header').click(function(e){
+        if(e.toElement.id == 'header'){
+            var position = -60;
+            if($('#header').css('bottom') == '-60px'){
+                position = 50;
+            }
+            $('#header').animate({bottom: position},"fast");
         }
-        $('#header').animate({bottom: position},"fast");
-        $('#hit-area').animate({bottom: hitAreaPosition},"fast");
-
     });
 
     $.ajax({
