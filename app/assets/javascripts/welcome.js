@@ -1,7 +1,10 @@
 $(document).on('ready page:load',function(){
-    $('#clickArea').click(function(e){
-        console.log(e);
-        $('#header').animate({width: 'toggle'});
+    $('#hit-area').hover(function(e){
+        var position = -60;
+        if($('#header').css('bottom') == '-60px'){
+            position = 50;
+        }
+        $('#header').animate({bottom: position},"fast");
     });
 
     $.ajax({
