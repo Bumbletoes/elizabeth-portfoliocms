@@ -15,7 +15,7 @@ $(document).on('ready page:load',function(){
         dataType: 'script'
     }).done(function(){
         $('.preview-image-container img').click(function(){
-            api.goTo($(this).attr('data-index'));
+            $.supersized.goTo($(this).attr('data-index'));
         });
     });
 });
