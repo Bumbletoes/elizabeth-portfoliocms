@@ -27,10 +27,17 @@
     var imagePreviewHTML = '';
 
     <% @gallery_images.each_with_index do |gallery_image, index| %>
-            imagePreviewHTML += '<div class="preview-image-container slide-link-<%= index %>">';
+            imagePreviewHTML += '<li class="preview-image-container thumb<%= index %>">';
             imagePreviewHTML +=   '<img data-index="<%= index %>" src="<%= gallery_image[:image]  %>" title="<%= gallery_image[:title] %>" />';
-            imagePreviewHTML += '</div>';
+            imagePreviewHTML += '</li>';
     <% end %>
 
-    $('#preview-images').html(imagePreviewHTML);
+        $('#thumb-list').html(imagePreviewHTML);
+
+    $('.preview-image-container img').click(function(){
+        console.log(api);
+        console.log(api.goTo);
+            api.goTo(1);
+        });
+
 })();
