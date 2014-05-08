@@ -58,6 +58,9 @@ ul#slide-list li a:hover{ background-position:0 -12px; cursor:pointer; }
 ----------------------------*/			
 #thumb-tray{ 
     display:inline-block !important; 
+}
+
+#thumb-list {
     width:100% !important;
 }
 
