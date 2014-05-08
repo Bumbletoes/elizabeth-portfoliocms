@@ -16,4 +16,5 @@
 //= require bootstrap
 //= require supersized.js
 //= require supersized.shutter.min.js
+//= require welcome
 

@@ -2,12 +2,15 @@
     <h1><%= link_to "ELIZABETH MCPHETRIDGE", root_path %></h1>
     <nav>
         <ul>
+            <li><%= link_to 'About', get_about_path, remote: true %></li>
             <% @navItems.each do |navItem| %>
                 <li><%= link_to navItem.name, get_gallery_path(navItem), remote: true %></li>
             <% end %>
-                <li><%= link_to 'About', get_about_path, remote: true %></li>
         </ul>
     </nav>
+    <div id="preview-images">
+
+    </div>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
