@@ -4,18 +4,6 @@
     $('#hzDownscaled').empty().remove();
     $('body').append('<div id="supersized-loader"></div><ul id="supersized"></ul>');
 
-
-    var imagePreviewHTML = '';
-
-    <% @gallery_images.each_with_index do |gallery_image, index| %>
-            imagePreviewHTML += '<li class="preview-image-container thumb<%= index %>">';
-            imagePreviewHTML +=   '<img data-index="<%= index %>" src="<%= gallery_image[:image]  %>" title="<%= gallery_image[:title] %>" />';
-            imagePreviewHTML += '</li>';
-    <% end %>
-        
-    $('#thumb-list').html(imagePreviewHTML);
-
-
     $.supersized({
         // Functionality
         slideshow            :1,			// Slideshow on/off
@@ -37,6 +25,19 @@
 
         slides : <%= @gallery_images.to_json.html_safe %> 
     });
+
+
+
+    var imagePreviewHTML = '';
+
+    <% @gallery_images.each_with_index do |gallery_image, index| %>
+            imagePreviewHTML += '<li class="preview-image-container thumb<%= index %>">';
+            imagePreviewHTML +=   '<img data-index="<%= index %>" src="<%= gallery_image[:image]  %>" title="<%= gallery_image[:title] %>" />';
+            imagePreviewHTML += '</li>';
+    <% end %>
+        
+    $('#thumb-list').html(imagePreviewHTML);
+
 
     $('.preview-image-container img').click(function(){
         api.goTo($(this).attr('data-index'));
