@@ -19,7 +19,7 @@ License : MIT License / GPL License
     bottom:0px;
     left:0;
     z-index:4;
-    background:url('images/nav-bg.png') repeat-x;
+    background:image-url('images/nav-bg.png') repeat-x;
     position:fixed;
 }
 
@@ -138,13 +138,13 @@ ul#slide-list li a:hover{
     left:0;
     height:8px;
     width:100%;
-    background:url('images/progress-back.png') repeat-x;
+    background:image-url('progress-back.png') repeat-x;
 }
 #progress-bar{ 
     position:relative;
     height:8px;
     width:100%;
-    background:url('images/progress-bar.png') repeat-x;
+    background:image-url('progress-bar.png') repeat-x;
 }
 
 /* Thumbnail Navigation
