@@ -5,11 +5,12 @@
 #thumb-tray {
     position:fixed;
     bottom:0px;
-    display:inline-block;
-    margin-left:200px;
+    display:inline-block !important;
+    width:100%;
 
     #thumb-list {
         margin-bottom:2px;
+        text-align:center; 
     }
 
     .preview-image-container {
