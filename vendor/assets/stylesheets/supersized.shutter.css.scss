@@ -19,7 +19,7 @@ License : MIT License / GPL License
     bottom:0px;
     left:0;
     z-index:4;
-    background:image-url('images/nav-bg.png') repeat-x;
+    background:image-url('nav-bg.png') repeat-x;
     position:fixed;
 }
 
@@ -57,7 +57,7 @@ License : MIT License / GPL License
     float:left;
     margin-top:1px;
     border-right:1px solid #333;
-    background:url('bg-hover.png') repeat-x 0 44px;
+    background:image-url('bg-hover.png') repeat-x 0 44px;
 }
 #play-button:hover{ 
     background-position:0 1px;
@@ -74,11 +74,11 @@ License : MIT License / GPL License
 }
 #prevslide{ 
     left:10px;
-    background:url('back.png');
+    background:image-url('back.png');
 }
 #nextslide{ 
     right:10px;
-    background:url('forward.png');
+    background:image-url('forward.png');
 }
 #prevslide:active, #nextslide:active{ 
     margin-top:-19px;
@@ -110,7 +110,7 @@ ul#slide-list li a{
     display:block;
     width:12px;
     height:12px;
-    background:url('nav-dot.png') no-repeat 0 -24px;
+    background:image-url('nav-dot.png') no-repeat 0 -24px;
 }
 ul#slide-list li a:hover{ 
     background-position:0 -12px;
@@ -121,7 +121,7 @@ ul#slide-list li a:hover{
     float:right;
     margin-top:1px;
     border-left:1px solid #333;
-    background:url('bg-hover.png') repeat-x 0 44px;
+    background:image-url('bg-hover.png') repeat-x 0 44px;
 }
 
 #tray-button:hover{ 
@@ -197,12 +197,12 @@ ul#slide-list li a:hover{
 }
 #thumb-back{ 
     left:0;
-    background: url('thumb-back.png') no-repeat center center;
+    background:image-url('thumb-back.png') no-repeat center center;
 }
 
 #thumb-forward{ 
     right:0;
-    background:url('thumb-forward.png') no-repeat center center;
+    background:image-url('thumb-forward.png') no-repeat center center;
 }
 
 #thumb-back:hover, #thumb-forward:hover{ 
