@@ -15,5 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require supersized.js
-//= require supersized.js.erb
+//= require supersized.shutter.js.erb
 //= require_tree .
