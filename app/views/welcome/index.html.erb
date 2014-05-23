@@ -4,7 +4,7 @@
         <ul>
             <li><%= link_to 'About', get_about_path, remote: true %></li>
             <% @navItems.each do |navItem| %>
-                <% if @navItem.name != 'landingPage' %>
+                <% if navItem.name != 'landingPage' %>
                 <li><%= link_to navItem.name, get_gallery_path(navItem), remote: true %></li>
                 <% end %>
         <% end %>
