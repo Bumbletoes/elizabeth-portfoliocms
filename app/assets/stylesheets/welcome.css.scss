@@ -44,10 +44,10 @@
     background-color:rgba(255,255,255,0.5);
 
     h1 {
-        font-family: 'i_shot_the_serifregular';
+        font-family: 'American_Purpose';
         font-weight: normal;
-        margin: 20px 10px 0px 15px;
-        font-size: 30px;
+        margin: 10px 10px 0px 15px;
+        font-size: 75px;
         display: inline-block;
         //width:290px;
     }
@@ -60,6 +60,8 @@
     nav {
         display: inline-block;
         vertical-align: top;
+        float:right;
+        margin-right:75px;
 
         ul {
             white-space: nowrap;
@@ -67,7 +69,7 @@
             margin-top:10px;
 
             li {
-                font-size: 15px;
+                font-size: 13px;
                 color: black;
                 //padding:13px;
                 margin-left:2px;
@@ -80,7 +82,6 @@
                 }
 
                 a {
-                    padding: 2px;
                     display:inline-block;
                     width:100px;
                     margin:0px;
