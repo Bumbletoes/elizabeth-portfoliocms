@@ -10,7 +10,7 @@ $(document).on('ready page:load',function(){
     });
 
     $.ajax({
-        url: 'load_gallery/4',
+        url: 'load_gallery/5',
         type: 'GET',
         dataType: 'script'
     });
