@@ -36,5 +36,12 @@
             imagePreviewHTML +=   '<img data-index="<%= index %>" src="<%= gallery_image[:image]  %>" title="<%= gallery_image[:title] %>" />';
             imagePreviewHTML += '</li>';
     <% end %>
-     $('#thumb-list').html(imagePreviewHTML);
+        $('#thumb-list').html(imagePreviewHTML);
+    if(<%= @gallery_id %> == 4){
+        $('#prevslide').hide();
+        $('#nextslide').hide();
+    }else{
+        $('#prevslide').show();
+        $('#nextslide').show();
+    }
 })();

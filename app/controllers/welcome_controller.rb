@@ -12,6 +12,7 @@ class WelcomeController < ApplicationController
 
     def load_gallery
         @gallery_images = Gallery.all_images_for_gallery(params[:id])
+        @gallery_id = params[:id]
         respond_to do |format|
             format.js
         end
