@@ -18,11 +18,11 @@
  
 @font-face {
     font-family: 'American_Purpose';
-    src: url('americanpurpose-webfont.eot');
-    src: url('americanpurpose-webfont.eot?#iefix') format('embedded-opentype'),
-         url('americanpurpose-webfont.woff') format('woff'),
-         url('americanpurpose-webfont.ttf') format('truetype'),
-         url('americanpurpose-webfont.svg#american_purposeregular') format('svg');
+    src: font-url('americanpurpose-webfont.eot');
+    src: font-url('americanpurpose-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('americanpurpose-webfont.woff') format('woff'),
+         font-url('americanpurpose-webfont.ttf') format('truetype'),
+         font-url('americanpurpose-webfont.svg#american_purposeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -36,7 +36,7 @@
 body {
     margin: 0 auto;
     background-color:black;
-    font-family:American_Purpose, Tahoma, Geneva, sans-serif !important;
+    font-family:calibri, Tahoma, Geneva, sans-serif !important;
 }
 
 ul {
