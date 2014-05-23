@@ -40,10 +40,9 @@
     if(<%= @gallery_id %> == 6){
         $('#prevslide').addClass('hide-this');
         $('#nextslide').addClass('hide-this');
-        $('#header').animate({bottom: -70},"fast");
     }else{
-        console.log('show!!!!');
         $('#prevslide').removeClass('hide-this');
         $('#nextslide').removeClass('hide-this');
+        $('#header').animate({bottom: -70},"fast");
     }
 })();
